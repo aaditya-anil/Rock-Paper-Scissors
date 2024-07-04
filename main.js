@@ -10,43 +10,40 @@ function computerChoice(){
     return choices[Math.floor(Math.random()*choices.length)]
 }
 
-const computerSelection = computerChoice();
-
 function playRound(playerSelection,computerSelection){
-    if (computerSelection == playerSelection){
+    if (computerSelection === playerSelection) {
         return "Tie";
     }
-    else if (playerSelection =="rock"){
-        if (computerSelection == "scissors")
-            return "You Win, Rock beat Scissors";
-        else
-            return "You Loose, Paper beat Scissors";
-    }
-    else if (playerSelection =="paper"){
-        if (computerSelection == "rock")
-            return "You Win, Paper beat Rock";
-        else
-            return "You Loose, Scissors beat Paper";
-    }
-    else{
-        if (computerSelection == "Paper")
-            return "You Win, Scissor beat Paper";
-        else
-            return "You Loose, Paper beat Rock";
+
+    const winConditions = {
+        rock: "scissors",
+        paper: "rock",
+        scissors: "paper"
+    };
+
+    if (winConditions[playerSelection] === computerSelection) {
+        return `You Win, ${playerSelection} beats ${computerSelection}`;
+    } else {
+        return `You Lose, ${computerSelection} beats ${playerSelection}`;
     }
 }
 
-function game(){
-    point = 0;
-    for (let i=0; i<5;i++){
-        const playerSelection = prompt("Enter your option").toLowerCase();
-        const result = playRound(playerSelection,computerSelection);
-        if (result.includes("Win")){
-            point++;
-        }
-        console.log(result);
+function game(playerSelection){
+    var point = 0;
+
+    var computerSelection = computerChoice();
+    var result = playRound(playerSelection,computerSelection);
+
+    if (result.includes("Win")){
+        point++;
     }
-    console.log("You have "+ point + " points");
+       
+    var divOfGameWinOrLose = document.getElementById('game-win-lose-element');
+    var gameWinLoseText = divOfGameWinOrLose.querySelector('h1');
+    gameWinLoseText.textContent = result;
+        
+    var divOfPointsElement = document.getElementById('points-element')
+    var pointsElement = divOfPointsElement.querySelector('h2');
+    pointsElement.textContent = "Points: " + point;
 }
 
-game();
