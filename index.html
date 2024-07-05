@@ -9,17 +9,24 @@
 </head>
 <body>
     <div class="gameWindow">
-        <div id="game-win-lose-element">
-            <h1>Start Game</h1>
+        <div class="header">
+            <div id="game-win-lose-element">
+                <p>START GAME</p>
+            </div>
+            <div id="points-element">
+                <p id="computer-points-element">COMPUTER 0</p>
+                <p id="user-points-element">YOU 0</p>
+            </div>
+        </div>
+        <div class="computer-option-element">
+            <img id="imageToDisplay" src="img/ClickBelow.png">
         </div>
         <div class="user-option-button">
-            <button onclick="game('rock')">Rock</button>
-            <button onclick="game('paper')">Paper</button>
-            <button onclick="game('scissors')">Scissors</button>
+            <img src="img\Rock.png" onclick="game('rock')">
+            <img src="img\Paper.png" onclick="game('paper')">
+            <img src="img\Scissors.png" onclick="game('scissors')">
         </div>
-        <div id="points-element">
-            <h2>Points:</h2>
-        </div>
+        
     </div>
     
     <script src="main.js"></script>

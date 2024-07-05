@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap');
 *{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Montserrat", sans-serif;
     
 }
 
@@ -15,11 +16,44 @@ body{
     text-align: center;
     background-color: rgb(223, 223, 223);
     border-radius: 20px;
-    height: 300px;
-    width: 300px;
+    width: 459px;
+    height: 816px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 24px 24px 24px 24px;
+    justify-content:space-between;
+    padding:  24px 24px 24px;
     
 }
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+    padding-left: 12px;
+}
+
+
+#game-win-lose-element p{
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 2px;
+    font-size: 32px;
+}
+
+#points-element p{
+    text-align: right;
+    margin-top: 0px;
+    margin-bottom: 2px;
+    font-size: 24px;
+}
+
+.user-option-button {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .user-option-button img {
+    width: 220px; /* Set a fixed width or adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+ 
